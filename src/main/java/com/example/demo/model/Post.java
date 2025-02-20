@@ -1,26 +1,32 @@
 package com.example.demo.model;
 
+import java.util.Date;
+
 public class Post
 {
     private String text;
     private Integer likes;
+    private Date creationDate;
 
-    // Конструктор
-    public Post(String text)
+    public Post(String text, Date creationDate)
     {
         this.text = text;
         this.likes = 0; // Изначально 0 лайков
+        this.creationDate = creationDate;
     }
 
-    // Геттер для text
     public String getText()
     {
         return text;
     }
 
-    // Геттер для likes
     public Integer getLikes()
     {
         return likes;
+    }
+
+    public Date getCreationDate()
+    {
+        return creationDate;
     }
 }
