@@ -1,18 +1,40 @@
 package com.example.demo.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.Date;
 
+@Entity
 public class Post
 {
+    @Id
     private String text;
     private Integer likes;
     private Date creationDate;
+    private Long id;
 
-    public Post(String text, Date creationDate)
+    public Post(Long id, String text, Integer likes, Date creationDate)
     {
+        this.id=id;
         this.text = text;
-        this.likes = 0; // Изначально 0 лайков
+        this.likes = likes;
         this.creationDate = creationDate;
+    }
+
+    public Post(){
+
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
+
+    public Long getId()
+    {
+        return id;
     }
 
     public String getText()
@@ -28,5 +50,10 @@ public class Post
     public Date getCreationDate()
     {
         return creationDate;
+    }
+
+    public void setLikes(Integer likes)
+    {
+        this.likes = likes;
     }
 }
